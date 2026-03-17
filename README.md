@@ -1,2 +1,189 @@
-# Museu-do-Cear-
+/**
+ * Theme Name: MuseusBR
+ * Description: Tema para o novo Cadastro Nacional de Museus
+ * Author: mateuswetah
+ * Template: blocksy
+ * Text Domain: museusbr
+ * Version: 0.4.39
+ */
+
+ /* Barra de busca dos banners */
+.hero-section .museusbr-banner-searchbar .wp-block-search__inside-wrapper {
+    --theme-form-field-height: 48px;
+}
+.hero-section .museusbr-banner-searchbar .wp-block-search__inside-wrapper .wp-block-search__button {
+    margin-left: 5px;
+}
+.hero-section[data-type="type-2"] > [class*="ct-container"] .museusbr-banner-searchbar {
+    float: right;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 999px) {
+    .hero-section[data-type="type-2"] > [class*="ct-container"] .museusbr-banner-searchbar {
+        justify-content: flex-start;
+        max-width: 100%;
+    }
+    .hero-section[data-type="type-2"] > [class*="ct-container"] .museusbr-banner-searchbar form {
+        max-width: 100%;
+    }
+    .hero-section[data-type="type-2"] > [class*="ct-container"] .museusbr-banner-searchbar input {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .hero-section .museusbr-banner-searchbar .wp-block-image {
+        display: none;
+    }
+    .hero-section .museusbr-banner-searchbar .wp-block-search__inside-wrapper {
+        width: 100%;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .hero-section[data-type="type-2"] > [class*="ct-container"] {
+        display: block !important;
+    }
+    .hero-section[data-type="type-2"] > [class*="ct-container"] .museusbr-banner-searchbar {
+        justify-content: flex-end;
+        float: right;
+        margin-right: 42px;
+    }
+}
+
+/* Botão de login */
+.ct-header-account {
+    --theme-button-min-height: 34px;
+    --theme-button-padding: 3px 15px;
+    --theme-button-font-size: 13px;
+}
+.ct-header-account .ct-account-item {
+    position: relative;
+    color: var(--theme-button-text-initial-color);
+    border: var(--theme-button-border);
+    background-color: var(--theme-button-background-initial-color);
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--theme-button-min-height);
+    padding: var(--theme-button-padding);
+    border: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    text-align: center;
+    border-radius: var(--theme-button-border-radius, 3px);
+    transition: all .2s ease;
+    --has-link-decoration: var(--false);
+}
+
+/* Blocks style */
+
+.wp-block-column.is-style-museusbr-clickable-card,
+.wp-block-columns.is-style-museusbr-clickable-card,
+.wp-block-group.is-style-museusbr-clickable-card {
+	cursor: pointer;
+	position: relative;
+}
+.wp-block-column.is-style-museusbr-clickable-card a::before,
+.wp-block-columns.is-style-museusbr-clickable-card a::before,
+.wp-block-group.is-style-museusbr-clickable-card a::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	display: block;
+	left: 0;
+	top: 0;
+	right: 0;
+	position: absolute;
+}
+
+/* Esconde o aviso de metadado customizado */
+.theme-items-list .metadata-alert {
+    display: none;
+    visibility: hidden;
+}
+.theme-items-list {
+    --theme-box-shadow: 0 4px 12px -6px rgba(0,0,0,0.7);
+}
+.theme-items-list:not(.tainacan-modal):not(.is-fullscreen) {
+    z-index: 0;
+}
+.theme-items-list .search-control {
+    background: var(--tainacan-primary) !important;
+    margin: 0 !important;
+    padding: 26px 0 9px 0 !important;
+}
+.theme-items-list .search-control::before {
+    content: '';
+    background: var(--tainacan-primary);
+    position: absolute;
+    top: 0;
+    left: -50%;
+    height: 100%;
+    width: 200vw;
+    z-index: -1;
+}
+.theme-items-list .search-control .dropdown.is-inline .dropdown-content {
+    background: var(--tainacan-primary) !important;
+}
+
+/* Formulário de Login */
+#user-registration,
+.ur-frontend-form {
+    border: none !important;
+    background-color: transparent !important;
+}
+
+/* Formulário de Registro */
+.user-registration.ur-frontend-form {
+	padding: 0;
+	border: none;
+}
+.user-registration.ur-frontend-form  .ur-form-row {
+    gap: 2rem;	
+	justify-content: space-between;
+}
+.user-registration.ur-frontend-form#user-registration-form-150358 .ur-grid-1 {
+    max-width: 400px;	
+}
+.user-registration.ur-frontend-form#user-registration-form-150358 .ur-grid-1::before {
+    content: 'Crie login e senha';
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+.user-registration.ur-frontend-form#user-registration-form-150358 .ur-grid-2 {
+	max-width: 55%;
+}
+.user-registration.ur-frontend-form#user-registration-form-150358 .ur-grid-2::before {
+    content: 'Dados do usuário';
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+@media screen and (max-width: 768px ) {
+    .user-registration.ur-frontend-form  .ur-form-row {
+        flex-direction: column;
+    }
+    .user-registration.ur-frontend-form  .ur-grid-1 {
+        max-width: 100%;
+        width: 100% !important;
+        
+    }
+    .user-registration.ur-frontend-form  .ur-grid-2 {
+        max-width: 100%;
+        width: 100% !important;
+    }
+}
+
+.tainacan-item-submission-form .b-steps .step-items {
+	overflow-x: hidden;
+}
+
+@media screen and (min-width: 1024px) {
+	.tainacan-item-submission-form .b-steps .steps .step-items .step-item {
+		flex-basis: 8em;
+	}
+}# Museu-do-Cear-
 História do Ceará
